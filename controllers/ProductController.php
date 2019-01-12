@@ -91,8 +91,7 @@ class ProductController extends Controller
             && $product->save()
         ) {
             return $this->redirect([
-                'view',
-                'id' => $product->id
+                'index'
             ]);
         }
 
