@@ -9,6 +9,7 @@ class BackendController extends Controller
 {
     public function actionIndex()
     {
+        $this->layout = 'admin_panel';
         return $this->render( 'index' );
     }
 }
