@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use yii\widgets\ListView;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
 /* @var $this yii\web\View */
@@ -11,12 +12,11 @@ use yii\widgets\Pjax;
 <div class="product-index">
 
     <?php Pjax::begin(); ?>
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            'name',
-        ],
-    ]); ?>
+
+    <?= ListView::widget([
+            'dataProvider' => $dataProvider,
+            'itemView' => '_item'
+    ]) ?>
+
     <?php Pjax::end(); ?>
 </div>
