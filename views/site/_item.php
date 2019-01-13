@@ -1,4 +1,4 @@
-<div style="width: 150px; float: left">
+<div style="width: 150px; float: left; margin: 10px">
 
     <?= $model->id ?>
     <?= $model->name ?>
