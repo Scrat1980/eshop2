@@ -16,19 +16,19 @@ class BackendController extends Controller
         return $this->redirect( '/index.php?r=product%2Findex' );
     }
 
-    public function actionUpload()
-    {
-        $model = new UploadForm();
-
-        if (Yii::$app->request->isPost) {
-            $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
-            if ($model->upload()) {
-                // file is uploaded successfully
-                return $this->render('upload', ['model' => $model]);
-            }
-        }
-
-        return $this->render('upload', ['model' => $model]);
-    }
+//    public function actionUpload()
+//    {
+//        $model = new UploadForm();
+//
+//        if (Yii::$app->request->isPost) {
+//            $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
+//            if ($model->upload()) {
+//                // file is uploaded successfully
+//                return $this->render('upload', ['model' => $model]);
+//            }
+//        }
+//
+//        return $this->render('upload', ['model' => $model]);
+//    }
 
 }
