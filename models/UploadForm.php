@@ -4,6 +4,7 @@ namespace app\models;
 
 use yii\base\Model;
 use yii\web\UploadedFile;
+use DateTime;
 
 class UploadForm extends Model
 {
@@ -22,14 +23,15 @@ class UploadForm extends Model
     public function upload()
     {
         if ($this->validate()) {
-
-            $this->imageFile->saveAs(
-                'uploads/'
-                . $this->imageFile->baseName
+            $date = new DateTime();
+            $name = $date->format('Y_m_d_H_i_s_ms');
+            $path = 'uploads/'
+                . $name
                 . '.'
-                . $this->imageFile->extension
-            );
-            return true;
+                . $this->imageFile->extension;
+            $this->imageFile->saveAs( $path );
+
+            return $path;
         } else {
             return false;
         }
